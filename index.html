@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Солнечная Система</title>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #000022, #000055);
+    color: #fff;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #111177;
+}
+header h1 { margin: 0; font-size: 2.5em; }
+
+/* Tabs - закреплённые сверху */
+.tabs {
+    display: flex;
+    justify-content: center;
+    background-color: #111177;
+    position: sticky; /* закрепляем сверху при прокрутке */
+    top: 0;
+    z-index: 100;
+    padding: 5px 0;
+}
+
+.tabs a {
+    text-decoration: none;
+    color: #00ccff;
+    padding: 12px 20px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.tabs a:hover {
+    background-color: #0033cc;
+    color: #fff;
+    border-radius: 5px;
+}
+
+/* Контент вкладок */
+.tab-content {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255,255,255,0.05);
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.tab-content > div {
+    display: none;
+}
+
+.tab-content > div:target {
+    display: block;
+}
+
+/* Показываем первый блок по умолчанию */
+#mercury { display: block; }
+
+/* Карточки */
+.card {
+    background-color: rgba(0,0,50,0.6);
+    border-left: 5px solid #00ccff;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.card h3 { color: #00ccff; margin-top: 0; }
+.card img { max-width: 100%; border-radius: 10px; margin: 15px 0; }
+.card p { line-height: 1.7; }
+button.card-btn { background-color: #00ccff; color: #000022; border: none; padding: 12px 25px; border-radius: 8px; cursor: pointer; margin-top: 10px; }
+button.card-btn:hover { background-color: #0099cc; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    header h1 { font-size: 2em; }
+    .tabs { flex-direction: column; }
+    .tabs a { margin-bottom: 5px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Солнечная Система</h1>
+</header>
+
+<div class="tabs">
+    <a href="#mercury">Меркурий</a>
+    <a href="#venus">Венера</a>
+    <a href="#earth">Земля</a>
+    <a href="#mars">Марс</a>
+    <a href="#jupiter">Юпитер</a>
+</div>
+
+<div class="tab-content">
+    <div id="mercury" class="card">
+        <h3>Меркурий</h3>
+        <p>Ближайшая к Солнцу планета. Экстремальные перепады температуры: -170°C ночью и +430°C днем.</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Mercury_in_true_color.jpg" alt="Меркурий">
+        <button class="card-btn">Узнать больше</button>
+    </div>
+
+    <div id="venus" class="card">
+        <h3>Венера</h3>
+        <p>Сестра Земли по размеру, с плотной атмосферой CO2. Температура достигает +465°C.</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Venus-real_color.jpg" alt="Венера">
+        <button class="card-btn">Узнать больше</button>
+    </div>
+
+    <div id="earth" class="card">
+        <h3>Земля</h3>
+        <p>Наша планета с живой природой, 71% поверхности покрыто водой.</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg" alt="Земля">
+        <button class="card-btn">Узнать больше</button>
+    </div>
+
+    <div id="mars" class="card">
+        <h3>Марс</h3>
+        <p>Красная планета, с вулканом Олимп и долиной Маринер. Ночные температуры падают до -100°C.</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg" alt="Марс">
+        <button class="card-btn">Узнать больше</button>
+    </div>
+
+    <div id="jupiter" class="card">
+        <h3>Юпитер</h3>
+        <p>Газовый гигант с кольцами и множеством спутников. Отличается красной пятнистой бурей.</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Jupiter.jpg" alt="Юпитер">
+        <button class="card-btn">Узнать больше</button>
+    </div>
+</div>
+
+</body>
+</html>
